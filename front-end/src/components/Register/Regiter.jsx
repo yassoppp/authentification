@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Regiter.css"
+import "./Regiter.css";
 function Regiter() {
   const [userData, setUserData] = useState({ username: "", password: "" });
   const handleSubmit = (e) => {
@@ -8,10 +8,12 @@ function Regiter() {
   };
   return (
     <div className="Register">
-      <form  onSubmit={handleSubmit}>
+      <form action="http://localhost:3001/users" method="POST">
+        <h1>Register</h1>
         <input
           value={userData.username}
           placeholder="username"
+          name="username"
           onChange={(e) =>
             setUserData({ ...userData, username: e.target.value })
           }
@@ -19,6 +21,7 @@ function Regiter() {
         <input
           value={userData.password}
           placeholder="password"
+          name="password"
           onChange={(e) =>
             setUserData({ ...userData, password: e.target.value })
           }

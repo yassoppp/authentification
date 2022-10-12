@@ -16,7 +16,7 @@ app.post("/users", async (req, res) => {
     const hashed_password = await bcrypt.hash(req.body.password, salt);
     const user = { username: req.body.username, password: hashed_password };
     users.push(user);
-    res.status(201).send();
+    res.redirect("http://localhost:3000");
   } catch (error) {
     console.log(error);
     res.status(500).send();
@@ -41,4 +41,4 @@ app.post("/users/login", async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(3001);

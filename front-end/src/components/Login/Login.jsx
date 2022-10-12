@@ -9,7 +9,8 @@ function Login() {
   };
   return (
     <div className="Register">
-      <form action="http://localhost:3000/users" method="POST">
+      <form>
+        <h1>Login</h1>
         <input
           value={userData.username}
           placeholder="username"
